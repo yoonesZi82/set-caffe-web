@@ -1,0 +1,45 @@
+{
+  "name": "cafe-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.9.0",
+    "@prisma/client": "^5.22.0",
+    "antd": "^5.21.2",
+    "aos": "^2.3.4",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.4.6",
+    "jsonwebtoken": "^9.0.2",
+    "leaflet": "^1.9.4",
+    "mysql2": "^3.11.3",
+    "next": "^14.2.14",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.0",
+    "react-icons": "^5.3.0",
+    "react-leaflet": "^4.2.1",
+    "react-loader-spinner": "^6.1.6",
+    "request": "^2.88.2",
+    "swiper": "^11.0.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "22.7.5",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.13",
+    "postcss": "^8.4.47",
+    "prisma": "^5.22.0",
+    "tailwindcss": "^3.4.13"
+  }
+}

@@ -1,0 +1,19 @@
+# Ignore Node.js modules
+node_modules/
+
+# Ignore Next.js build folder
+.next/
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+
+# Ignore environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

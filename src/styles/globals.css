@@ -1,0 +1,440 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: shabnam;
+  src: url("/fonts/shabnam/Shabnam-Medium.woff");
+}
+
+@font-face {
+  font-family: shabnam-Bold;
+  src: url("/fonts/shabnam/Shabnam-Bold.woff");
+}
+
+@layer utilities {
+  .form-box {
+    direction: ltr;
+  }
+}
+:root {
+  --whiteText: #e4e6b2;
+  --darkBrown: #34180e;
+  --lightBrown: #3f2616;
+  --textBrown: #3c2415;
+  --sidebarTheme: #d2b48c;
+  --navbarDashboard: #4b382a;
+  --contentDashboard: #f4f4f4;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: shabnam;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #fff !important;
+  border-radius: 12px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #711d1c !important;
+  border-radius: 12px !important;
+}
+
+.form-box::-webkit-scrollbar {
+  width: 7px;
+  background-color: #fff !important;
+  border-radius: 12px !important;
+}
+.form-box::-webkit-scrollbar-thumb {
+  background-color: #711d1c !important;
+  border-radius: 12px !important;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+body {
+  background: white;
+  position: relative;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.container {
+  max-width: 1222px;
+  margin: 0 auto;
+}
+
+/* swiper */
+.mySwiper .swiper-button-prev:after,
+.mySwiper .swiper-button-next:after {
+  font-size: 26px !important;
+  color: #070707 !important;
+  font-weight: 1000;
+}
+
+.home-slider .swiper-button-prev:after,
+.home-slider .swiper-button-next:after {
+  font-size: 14px !important;
+  color: #070707 !important;
+  font-weight: 1000;
+}
+
+.home-slider img {
+  position: relative;
+  right: 1px;
+  cursor: grabbing;
+}
+
+.gallery-slider .swiper-button-prev:after,
+.gallery-slider .swiper-button-next:after {
+  font-size: 26px !important;
+  color: #070707 !important;
+  font-weight: 1000;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-slider-2 {
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.gallery-slider-2 .swiper-slide {
+  opacity: 0.4;
+}
+
+.gallery-slider-2 .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.articles_slider .swiper-button-prev,
+.articles_slider .swiper-button-next {
+  opacity: 0;
+}
+
+.articles_slider:hover .swiper-button-prev,
+.articles_slider:hover .swiper-button-next {
+  opacity: 1;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* swal */
+.swal-overlay--show-modal {
+  backdrop-filter: blur(2px) !important;
+}
+.swal-footer {
+  text-align: center;
+}
+
+.swal-modal {
+  background: #ffffff !important;
+  border: 2px solid #711d1c;
+}
+
+.swal-title {
+  color: #000000 !important;
+}
+
+.swal-button--confirm {
+  background: #fff;
+  color: #711d1c;
+}
+
+.swal-content__input:focus,
+.swal-content__textarea:focus {
+  outline: none;
+  border-color: #711d1c !important;
+}
+
+.swal-button:not([disabled]):hover {
+  box-shadow: none !important;
+  background-color: #efefef !important;
+}
+
+.swal-button--cancel:hover {
+  background-color: #e1dede !important;
+}
+
+.swal-button--confirm {
+  box-shadow: none !important;
+  background: #e9e5e5 !important;
+}
+
+.swal-content__input {
+  color: black !important;
+  border: 1px solid #711d1c;
+}
+
+.swal-button:focus {
+  box-shadow: none !important;
+}
+
+/* charts */
+.yAxis .recharts-cartesian-axis-tick-value {
+  text-anchor: start !important;
+}
+
+.css-13cymwt-control,
+.css-16xfy0z-control {
+  height: 51px;
+  margin-top: 0.3rem;
+}
+
+/* leaflet */
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
+  z-index: 999 !important;
+}
+
+.leaflet-default-icon-path {
+  background-image: url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png) !important;
+}
+
+.leaflet-top {
+  right: 12px !important;
+  bottom: 12px !important;
+  left: unset !important;
+  top: unset !important;
+}
+/* end */
+
+.mug::before {
+  content: "";
+  position: absolute;
+  background: #eff0d1;
+  height: 80px;
+  width: 60px;
+  top: -85px;
+  right: -75px;
+  border-radius: 5px;
+  box-shadow: inset 0px 50px 0 0px #eff0d1;
+  transform: rotate(45deg);
+}
+
+.mug::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  border: 3px solid #77665c;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  opacity: 0.2;
+  animation: rings 3s ease-out infinite;
+}
+
+@keyframes rings {
+  to {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+
+.navbar-animate {
+  animation: fadeInDownBig 0.4s ease;
+}
+@keyframes fadeInDownBig {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* style Badge */
+.ant-badge-count {
+  background: var(--darkBrown) !important;
+}
+/* end style Badge */
+
+/* style Modal */
+.ant-modal-footer {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* end style Modal */
+
+/* style OTP */
+.ant-otp {
+  direction: ltr !important;
+}
+/* end style OTP */
+
+/* style countdown */
+.ant-statistic-content {
+  text-align: center !important;
+}
+/* end style countdown */
+
+/* style card products */
+.ant-card {
+  &:not(:hover) {
+    opacity: 0.8;
+  }
+  cursor: grab !important;
+}
+.ant-card-meta-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ant-card-actions > li {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+/* end style card */
+
+/* style promote */
+.club {
+  background-image: url("/image/clubset1.jpg");
+}
+/* end style promote */
+
+/* style sidebar dashboard */
+.ant-layout-sider-children {
+  background: white !important;
+}
+/* end style sidebar dashboard */
+
+/* style dashboard */
+.ant-layout-sider-children {
+  background: var(--sidebarTheme) !important;
+}
+.sidebar > ul {
+  background: var(--sidebarTheme) !important;
+}
+/* end style dashboard */
+
+/* style sub menu */
+.ant-menu-sub {
+  background: var(--sidebarTheme) !important;
+}
+/* end style sub menu */
+
+/* style badge */
+.ant-scroll-number {
+  background: var(--navbarDashboard) !important;
+  color: var(--sidebarTheme) !important;
+}
+/* end style badge */
+
+/* style image */
+.ant-image > img {
+  border-radius: 8px !important;
+}
+/* end style image */
+
+/* style pagination */
+.ant-pagination-item {
+  color: var(--navbarDashboard) !important;
+  transition: all 500ms;
+  &:hover {
+    background: var(--navbarDashboard) !important;
+    color: var(--sidebarTheme) !important;
+  }
+}
+.ant-pagination-item-active {
+  color: var(--sidebarTheme) !important;
+}
+/* end style pagination */
+
+/* style collapse */
+.ant-collapse-header-text {
+  color: var(--navbarDashboard) !important;
+}
+/* end style collapse */
+
+/* style result  */
+.ant-result-title {
+  color: var(--navbarDashboard) !important;
+}
+
+.ant-result-subtitle {
+  color: var(--sidebarTheme) !important;
+}
+/* end style result */
+
+/* style card table */
+.ant-table-content {
+  overflow-x: auto !important;
+}
+
+.card-table > div > div > div > div > div > table > tbody {
+  background: var(--sidebarTheme) !important;
+}
+
+.card-table > div > div > div > div > div > table > tbody > tr {
+  transition: all 200ms;
+  &:hover {
+    color: var(--sidebarTheme) !important;
+  }
+}
+tbody > tr {
+  color: var(--navbarDashboard) !important;
+  transition: all 500ms;
+  &:hover {
+    background: var(--navbarDashboard) !important;
+    color: var(--sidebarTheme) !important;
+  }
+}
+/* end style card table */
+
+/* style modal */
+.ant-modal-mask {
+  backdrop-filter: blur(3px) !important;
+}
+/* end style modal */
+
+/* style uploader */
+.ant-upload {
+  width: 100% !important;
+}
+/* end style uploader */

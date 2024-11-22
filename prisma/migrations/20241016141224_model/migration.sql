@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Otp` MODIFY `time` INTEGER NOT NULL DEFAULT 0;

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Otp` MODIFY `expTime` VARCHAR(191) NOT NULL;

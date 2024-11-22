@@ -1,0 +1,155 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  name    String   @default("کاربر ست کافی")
+  email   String   
+  phone   String   
+  password String
+  role    String
+  image   String?
+  refreshToken String?
+  comment Comment[]
+  discount Discount[]
+  ticket   Ticket[]
+  wishlist Wishlist[]
+  contact  Contact[]
+  isBan    Boolean @default(false)  
+  order    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@unique([email , phone])
+}
+model Product {
+  id      Int      @id @default(autoincrement())
+  name    String
+  price   Int
+  shortDescription String 
+  longDescription  String
+  weight  Float
+  suitableFor String
+  smell   String
+  score   Float
+  img     String
+  tags    Json
+  number  Int
+  comment Comment[]
+  wishlist Wishlist[]
+  @@unique([name])
+}
+model Comment {
+  id      Int      @id @default(autoincrement())
+  userID  Int
+  productID Int 
+  username String   
+  body    String   @db.Text
+  email   String   
+  score   Float      @default(5)
+  isAccept Boolean @default(false)
+  user    User    @relation(fields: [userID],references: [id] , onDelete:Cascade)
+  product Product  @relation(fields: [productID],references: [id] , onDelete:Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Discount {
+  id      Int      @id @default(autoincrement())
+  userID Int
+  code    String
+  percent Int
+  maxUse  Int
+  uses    Int?      @default(0)
+  user    User     @relation(fields: [userID],references: [id] , onDelete:Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Ticket {
+  id      Int      @id @default(autoincrement())
+  userID  Int
+  departmentID Int
+  subdepartmentID Int
+  title   String
+  body    String
+  answer  String?  
+  user    User     @relation(fields: [userID],references: [id] , onDelete:Cascade)
+  department    Department     @relation(fields: [departmentID],references: [id] , onDelete:Cascade)
+  subdepartment   Subdepartment     @relation(fields: [subdepartmentID],references: [id] , onDelete:Cascade)
+  piority Int    @default(1)
+  hasAnswer Boolean  @default(false)
+  isAnswer  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Wishlist {
+  id      Int      @id @default(autoincrement())
+  userID  Int
+  productID Int
+  user    User     @relation(fields: [userID],references: [id] , onDelete:Cascade)
+  product    Product     @relation(fields: [productID],references: [id] , onDelete:Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Order {
+    id      Int      @id @default(autoincrement())
+  userID  Int
+  name    String
+  image   String
+  price   Int
+  user    User    @relation(fields: [userID],references: [id] , onDelete:Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contact {
+  id      Int      @id @default(autoincrement())
+  userID  Int
+  name    String   
+  email   String   
+  phone   String   
+  company String?
+  message String
+  user    User    @relation(fields: [userID],references: [id] , onDelete:Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Department {
+  id      Int      @id @default(autoincrement())
+  title   String
+  subdepartment Subdepartment[]
+  ticket  Ticket[]
+  @@unique([title])
+}
+model Subdepartment {
+    id      Int      @id @default(autoincrement())
+    departmentID Int
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    title    String
+    ticket  Ticket[]
+    department Department @relation(fields: [departmentID],references: [id] , onDelete:Cascade)
+
+}
+
+model Otp {
+    id      Int      @id @default(autoincrement())
+    phone   String
+    code    String
+    expTime String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+

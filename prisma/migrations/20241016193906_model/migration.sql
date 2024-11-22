@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Discount` MODIFY `uses` INTEGER NULL DEFAULT 0;
