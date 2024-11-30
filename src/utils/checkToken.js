@@ -40,7 +40,6 @@ export async function checkToken() {
           },
         },
         contact: true,
-        discount: true,
         order: true,
       },
     });

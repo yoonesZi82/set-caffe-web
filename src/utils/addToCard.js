@@ -5,7 +5,7 @@ const addToCard = ({ id, img, name, price, userID, count }) => {
     showNotification({
       type: "error",
       message: "پیغام",
-      description: "برای افزودن به سبد خرید لطفا وارد شوید",
+      description: "برای افزودن به سبد خرید لطفا وارد حساب خود شوید",
     });
     return false;
   }

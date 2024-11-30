@@ -17,7 +17,7 @@ function GlobalBtn({ title, link, iconName, model, onClick, loading }) {
                 onClick={onClick}
               >
                 {" "}
-                {title}{" "}
+                {title ? title : null}{" "}
               </Button>
             </Link>
           ) : (
@@ -28,7 +28,7 @@ function GlobalBtn({ title, link, iconName, model, onClick, loading }) {
               loading={loading}
             >
               {" "}
-              {title}{" "}
+              {title ? title : null}{" "}
             </Button>
           )}
         </>
@@ -42,7 +42,7 @@ function GlobalBtn({ title, link, iconName, model, onClick, loading }) {
                 onClick={onClick}
               >
                 {" "}
-                {title}{" "}
+                {title ? title : null}{" "}
               </Button>
             </Link>
           ) : (
@@ -53,7 +53,7 @@ function GlobalBtn({ title, link, iconName, model, onClick, loading }) {
               loading={loading}
             >
               {" "}
-              {title}{" "}
+              {title ? title : null}{" "}
             </Button>
           )}
         </>

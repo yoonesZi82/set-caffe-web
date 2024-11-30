@@ -12,6 +12,7 @@ const DynamicBreadcrumb = () => {
     "p-admin": "صفحه اصلی پنل",
     "p-user": "صفحه اصلی پنل",
     "new-product": "ایجاد محصول جدید",
+    "new-discount": "ایجاد کدتخفیف",
     products: "محصولات",
     tickets: "تیکت ها",
     detail: "جزئیات",
@@ -23,6 +24,7 @@ const DynamicBreadcrumb = () => {
     users: "کاربران",
     orders: "سفارش ها",
     sendTicket: "ارسال تیکت",
+    discount: "کدهای تخفیف",
   };
 
   // get way

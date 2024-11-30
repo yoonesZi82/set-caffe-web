@@ -18,6 +18,8 @@ import {
   PiShieldCheckBold,
   PiUserListBold,
   PiFolderPlusBold,
+  PiPercentBold,
+  PiSealPercent,
 } from "react-icons/pi";
 import { usePathname, useRouter } from "next/navigation";
 import DynamicBreadcrumb from "../breadcrump2/NewBreadcump";
@@ -75,6 +77,31 @@ function DashboardLayout({ howUser, user, children }) {
                 key: "account",
                 icon: <PiUserBold size={20} />,
                 label: <Link href="/p-admin/account"> حساب کاربری </Link>,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        key: "percent",
+        label: "کدتخفیف",
+        icon: <PiSealPercent size={20} />,
+        children: [
+          {
+            key: "children-counter",
+            type: "group",
+            children: [
+              {
+                key: "new-discount",
+                icon: <PiPercentBold size={20} />,
+                label: (
+                  <Link href="/p-admin/new-discount"> ایجاد کدتخفیف </Link>
+                ),
+              },
+              {
+                key: "discount",
+                icon: <PiPercentBold size={20} />,
+                label: <Link href="/p-admin/discount"> کدهای تخفیف </Link>,
               },
             ],
           },
@@ -293,7 +320,7 @@ function DashboardLayout({ howUser, user, children }) {
                   <Button
                     icon={<PiSignOutBold size={20} />}
                     className="bg-navbarDashboard hover:bg-sidebarTheme mx-auto my-0 border-none rounded-[8px] w-[70%] text-sidebarTheme hover:text-navbarDashboard transition-colors duration-500 outline-none"
-                    onClick={showModal}
+                    onClick={() => setIsModalOpen(true)}
                   >
                     {collapsed ? null : "خروج از حساب"}
                   </Button>
