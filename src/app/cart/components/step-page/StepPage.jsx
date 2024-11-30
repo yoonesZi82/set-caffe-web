@@ -6,6 +6,7 @@ import Link from "next/link";
 import showNotification from "@/utils/notification";
 import InvoiceBox from "../invoice/InvoiceBox";
 import Pay from "../pay/Pay";
+import Completed from "../completed/Completed";
 
 function StepPage({ user }) {
   const [current, setCurrent] = useState(0);
@@ -46,7 +47,7 @@ function StepPage({ user }) {
     },
     {
       title: "تکمیل شده",
-      content: "Last-content",
+      content: <Completed />,
     },
   ];
 

@@ -41,11 +41,11 @@ function InvoiceBox({ user }) {
     axios
       .put("/api/discounts/use", {
         code: data.code,
-        userID: user.id,
       })
       .then((res) => {
         if (res.status === 200) {
           const newPriceOff = (totalPrice * res.data.percent) / 100;
+
           setPriceOff(newPriceOff);
           const finalPrice = totalPrice - newPriceOff;
           setTotalPriceForOff(finalPrice);
@@ -94,7 +94,7 @@ function InvoiceBox({ user }) {
   if (typeof window != "undefined") {
     localStorage.setItem(
       "totalPrice",
-      JSON.stringify(totalPriceForOff > 0 ? totalPriceForOff : totalPrice)
+      JSON.stringify(priceOff ? totalPriceForOff : totalPrice)
     );
   }
   return (
@@ -131,7 +131,7 @@ function InvoiceBox({ user }) {
             <span className="text-navbarDashboard"> مبلغ پرداختی </span>
             <span className="text-navbarDashboard">
               {" "}
-              {totalPriceForOff > 0
+              {priceOff
                 ? totalPriceForOff.toLocaleString()
                 : totalPrice.toLocaleString()}{" "}
               تومان{" "}

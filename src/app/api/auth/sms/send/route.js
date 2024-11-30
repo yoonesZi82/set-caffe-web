@@ -4,6 +4,7 @@ const db = new PrismaClient();
 
 export async function POST(req) {
   try {
+    // api sms
     const body = await req.json();
     const { phone } = body;
 

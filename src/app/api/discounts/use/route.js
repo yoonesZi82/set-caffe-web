@@ -4,18 +4,14 @@ const db = new PrismaClient();
 export async function PUT(req) {
   try {
     const body = await req.json();
-    const { code, userID } = body;
+    const { code } = body;
 
     if (!code) {
       return Response.json({ message: "Code is not valid" }, { status: 401 });
     }
 
-    if (!userID) {
-      return Response.json({ message: "User is not find" }, { status: 402 });
-    }
-
     const discount = await db.discount.findFirst({
-      where: { code },
+      where: { code, access: 2 },
     });
 
     if (!discount) {
@@ -30,18 +26,15 @@ export async function PUT(req) {
         where: { id: discount.id },
         data: {
           uses: discount.uses + 1,
-          user: {
-            connect: { id: userID },
-          },
         },
       });
+      return Response.json(discount);
     } else {
       return Response.json(
         { message: "The code has expired" },
         { status: 405 }
       );
     }
-    return Response.json(discount);
   } catch (err) {
     return Response.json(
       { message: `Unknown Error in Use Discount API --> ${err}` },

@@ -27,22 +27,22 @@ async function AdminHomePage() {
             <section className="gap-6 grid grid-cols-1 desktop:grid-cols-4 laptop:grid-cols-4 mobile:grid-cols-1 tablet:grid-cols-2">
               <Box
                 title="مجموع تیکت های دریافتی "
-                value={tickets.length}
+                value={tickets ? tickets.length : 0}
                 iconName="PiChatTextBold"
               />
               <Box
                 title="مجموع محصولات "
-                value={products.length}
+                value={products ? products.length : 0}
                 iconName="PiCoffeeBeanBold"
               />
               <Box
                 title="مجموع سفارشات "
-                value={orders.length}
+                value={orders ? orders.length : 0}
                 iconName="PiBasketBold"
               />
               <Box
                 title="مجموع کاربر های سایت "
-                value={users.length}
+                value={users ? users.length : 0}
                 iconName="PiUserBold"
               />
             </section>{" "}
