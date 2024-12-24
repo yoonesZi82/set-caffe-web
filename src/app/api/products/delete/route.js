@@ -28,9 +28,10 @@ export async function DELETE(req) {
     }
     const directory = path.join(
       process.cwd(),
-      "public/uploads/",
+      "public/uploads/product",
       product.img.split("/").pop()
     );
+    console.log(directory);
 
     if (!existsSync(directory)) {
       return Response.json(

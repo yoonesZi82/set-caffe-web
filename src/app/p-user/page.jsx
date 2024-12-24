@@ -23,21 +23,25 @@ const UserPanel = async () => {
                 title="مجموع تیکت ها "
                 value={user ? user.ticket.length : 0}
                 iconName="PiChatTextBold"
+                link={"/p-user/tickets"}
               />
               <Box
                 title="مجموع کامنت ها "
                 value={user ? user.comment.length : 0}
                 iconName="PiChatCircleTextBold"
+                link={"/p-user/comments"}
               />
               <Box
                 title="مجموع سفارشات"
                 value={user ? user.order.length : 0}
                 iconName="PiBasketBold"
+                link={"/p-user/orders"}
               />
               <Box
                 title="مجموع علاقه مندی ها"
                 value={user ? user.wishlist.length : 0}
                 iconName="PiHeartBold"
+                link={"/p-user/wishlist"}
               />
             </section>
             <section className="gap-6 grid grid-cols-1 desktop:grid-cols-2 laptop:grid-cols-2 mobile:grid-cols-1 tablet:grid-cols-1 pb-10 h-full">

@@ -1,3 +1,4 @@
+import tailwindMotion from "tailwindcss-motion";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   important: true,
@@ -37,5 +38,5 @@ module.exports = {
       center: true,
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), tailwindMotion],
 };

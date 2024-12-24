@@ -24,26 +24,31 @@ async function AdminHomePage() {
       ) : (
         <DashboardLayout user={user} howUser={"ADMIN"}>
           <main className="flex flex-col gap-8 h-full">
-            <section className="gap-6 grid grid-cols-1 desktop:grid-cols-4 laptop:grid-cols-4 mobile:grid-cols-1 tablet:grid-cols-2">
+            <section className="gap-6 grid grid-cols-1 desktop:grid-cols-4 laptop:grid-cols-4 mobile:grid-cols-1 tablet:grid-cols-2 motion-translate-x-in-[0%] motion-translate-y-in-[39%]">
               <Box
                 title="مجموع تیکت های دریافتی "
                 value={tickets ? tickets.length : 0}
                 iconName="PiChatTextBold"
+                link={"/p-admin/tickets"}
               />
+
               <Box
                 title="مجموع محصولات "
                 value={products ? products.length : 0}
                 iconName="PiCoffeeBeanBold"
+                link={"/p-admin/products"}
               />
               <Box
                 title="مجموع سفارشات "
                 value={orders ? orders.length : 0}
                 iconName="PiBasketBold"
+                link={"/p-admin/orders"}
               />
               <Box
                 title="مجموع کاربر های سایت "
                 value={users ? users.length : 0}
                 iconName="PiUserBold"
+                link={"/p-admin/users"}
               />
             </section>{" "}
             <div className="flex justify-between items-center gap-10 w-full h-full">

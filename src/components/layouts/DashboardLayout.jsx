@@ -64,9 +64,14 @@ function DashboardLayout({ howUser, user, children }) {
                 label: <Link href="/p-admin/comments"> کامنت ها </Link>,
               },
               {
-                key: "product",
+                key: "products",
+                icon: <PiHouseLineBold size={20} />,
+                label: <Link href="/p-admin/products"> محصولات </Link>,
+              },
+              {
+                key: "new-product",
                 icon: <PiFolderPlusBold size={20} />,
-                label: <Link href="/p-admin/new-product"> ایجاد محصول</Link>,
+                label: <Link href="/p-admin/new-product"> افزودن محصول</Link>,
               },
               {
                 key: "users",
