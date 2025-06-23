@@ -128,12 +128,15 @@ const Product = ({ name, price, img, id, userID }) => {
   return (
     <>
       <Card
-        className="mx-auto my-0 max-w-[300px] duration-500"
+        className="mx-auto my-0 max-w-[300px] overflow-hidden duration-500"
         cover={
           <Image
             alt="cover"
             src={`/uploads/product/${img}`}
             fallback="/image/not-found.png"
+            height={300}
+            width={300}
+            className="object-cover"
           />
         }
         actions={[

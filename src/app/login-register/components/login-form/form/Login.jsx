@@ -99,6 +99,7 @@ const Login = ({ showRegisterForm, showLoginOtp }) => {
       reset();
     }
   };
+
   return (
     <>
       {contextHolder}
@@ -134,7 +135,7 @@ const Login = ({ showRegisterForm, showLoginOtp }) => {
           className="flex flex-col justify-center items-center gap-3"
           dir="rtl"
         >
-          <div className="flex desktop:flex-row laptop:flex-row flex-col mobile:flex-col tablet:flex-col justify-center items-center gap-[8px] desktop:gap-8 laptop:gap-8 mobile:gap-[8px] tablet:gap-[8px] w-full">
+          <div className="flex laptop:flex-row flex-col justify-between items-center gap-[8px] laptop:gap-4 w-full">
             <GlobalBtn
               model={2}
               title={" ورود با کد یکبار مصرف"}

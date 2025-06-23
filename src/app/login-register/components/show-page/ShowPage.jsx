@@ -7,7 +7,6 @@ import PageForm from "@/components/form/panel-form/PageForm";
 
 const ShowPage = () => {
   const [authType, setAuthType] = useState("login");
-
   const showRegisterForm = () => setAuthType("register");
   const showLoginForm = () => setAuthType("login");
   const showLoginOtp = () => setAuthType("sms");

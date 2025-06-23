@@ -97,7 +97,7 @@ function Detail({ id, user }) {
   };
   return (
     <div
-      className="desktop:px-[163px] laptop:px-[163px] gap-16 mx-auto px-6 mobile:px-6 tablet:px-6 pt-[150px] pb-[100px]"
+      className="gap-16 mx-auto px-6 desktop:px-[163px] laptop:px-[163px] mobile:px-6 tablet:px-6 pt-[150px] pb-[100px]"
       data-aos="fade-up"
     >
       <div
@@ -109,10 +109,10 @@ function Detail({ id, user }) {
       >
         {loading && <Loader />}
         {error && (
-          <p className="font-medium text-2xl text-navbarDashboard"> {error} </p>
+          <p className="font-medium text-navbarDashboard text-2xl"> {error} </p>
         )}
         {!error && !loading && product.length === 0 && (
-          <p className="font-medium text-2xl text-navbarDashboard">
+          <p className="font-medium text-navbarDashboard text-2xl">
             {" "}
             محصول یافت نشد{" "}
           </p>
@@ -121,13 +121,15 @@ function Detail({ id, user }) {
           <>
             <div className="rounded-[8px]">
               <Image
-                src={`/uploads/product/${product.img}`}
                 alt="product"
-                className="rounded-[8px]"
+                src={`/uploads/product/${product.img}`}
                 onError={(e) => (e.target.src = "/image/not-found.png")}
+                height={400}
+                width={400}
+                className="rounded-[8px] object-cover"
               />
             </div>
-            <main className="flex flex-col gap-10">
+            <main className="flex flex-col gap-10 px-10">
               <section className="flex flex-col justify-start items-start gap-4 pb-12 border-b-2 border-b-sidebarTheme">
                 <p> صفحه اصلی / محصولات / {product.name} </p>
                 <p className="font-medium text-navbarDashboard text-xl">
@@ -141,10 +143,10 @@ function Detail({ id, user }) {
                     تعداد امتیاز دهندگان ({numberUser}){" "}
                   </span>
                 </div>
-                <p className="font-medium text-2xl text-navbarDashboard">
+                <p className="font-medium text-navbarDashboard text-2xl">
                   {product.price.toLocaleString()} تومان
                 </p>
-                <p className="line-clamp-3 text-ls text-sidebarTheme">
+                <p className="text-ls text-sidebarTheme line-clamp-3">
                   {product.shortDescription}
                 </p>
               </section>
@@ -194,7 +196,7 @@ function Detail({ id, user }) {
                   )}
                 </div>
                 <div className="w-full">
-                  <span className="font-medium text-lg text-navbarDashboard">
+                  <span className="font-medium text-navbarDashboard text-lg">
                     {" "}
                     تگ ها :{" "}
                   </span>
@@ -208,7 +210,7 @@ function Detail({ id, user }) {
                 <div className="flex justify-start items-center gap-4 w-full">
                   <div className="flex justify-center items-center">
                     <Button
-                      className="border-2 border-sidebarTheme p-1 rounded-tl-none rounded-bl-none"
+                      className="p-1 border-2 border-sidebarTheme rounded-tl-none rounded-bl-none"
                       icon={<PiMinusBold size={14} />}
                       onClick={() => {
                         count <= 0
@@ -216,11 +218,11 @@ function Detail({ id, user }) {
                           : setCount((prevCount) => prevCount - 1);
                       }}
                     ></Button>
-                    <div className="border-2 border-sidebarTheme px-[7px] py-[5px] border-r-0 border-l-0 text-center text-navbarDashboard text-sm">
+                    <div className="px-[7px] py-[5px] border-2 border-sidebarTheme border-r-0 border-l-0 text-navbarDashboard text-sm text-center">
                       {count}
                     </div>
                     <Button
-                      className="border-2 border-sidebarTheme p-1 rounded-tr-none rounded-br-none"
+                      className="p-1 border-2 border-sidebarTheme rounded-tr-none rounded-br-none"
                       icon={<PiPlusBold size={14} />}
                       onClick={() => setCount((prevCount) => prevCount + 1)}
                     ></Button>
@@ -258,7 +260,7 @@ function Detail({ id, user }) {
       <div className="flex flex-col justify-center items-center gap-4 pt-14">
         {!loading && !error && product && (
           <>
-            <p className="text-center text-navbarDashboard text-xl">
+            <p className="text-navbarDashboard text-xl text-center">
               {" "}
               محصولات مرتبط{" "}
             </p>

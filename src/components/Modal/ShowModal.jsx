@@ -17,7 +17,7 @@ function ShowModal({
         status={status}
         title={title}
         extra={
-          <div className="flex justify-center items-center gap-5 w-full">
+          <div className="flex justify-between items-center gap-5 w-full">
             <GlobalBtn
               title={titleBtn}
               model={1}

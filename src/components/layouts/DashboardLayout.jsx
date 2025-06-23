@@ -261,8 +261,8 @@ function DashboardLayout({ howUser, user, children }) {
     <>
       <Layout className="w-screen h-screen">
         <Header className="flex items-center p-0">
-          <div className="desktop:w-[15%] laptop:w-[23%] flex justify-center items-center bg-navbarDashboard w-[66%] mobile:w-[66%] tablet:w-[38%] h-full">
-            <p className="text-base text-white">
+          <div className="flex justify-center items-center bg-navbarDashboard w-[66%] desktop:w-[15%] laptop:w-[23%] mobile:w-[66%] tablet:w-[38%] h-full">
+            <p className="text-white text-base">
               {user ? user.name : "نام"} عزیز خوش اومدی
             </p>
           </div>
@@ -276,7 +276,7 @@ function DashboardLayout({ howUser, user, children }) {
                 )}
               </div>
               <ul className="flex flex-col justify-center items-center gap-[1px]">
-                <li className="text-lg text-white">
+                <li className="text-white text-lg">
                   {" "}
                   {user ? user.name : "نام"}{" "}
                 </li>
@@ -324,7 +324,7 @@ function DashboardLayout({ howUser, user, children }) {
                 <Tooltip title="خروج از حساب" placement="left">
                   <Button
                     icon={<PiSignOutBold size={20} />}
-                    className="bg-navbarDashboard hover:bg-sidebarTheme mx-auto my-0 border-none rounded-[8px] w-[70%] text-sidebarTheme hover:text-navbarDashboard transition-colors duration-500 outline-none"
+                    className="bg-navbarDashboard hover:bg-sidebarTheme mx-auto my-0 border-none rounded-[8px] outline-none w-[70%] text-sidebarTheme hover:text-navbarDashboard transition-colors duration-500"
                     onClick={() => setIsModalOpen(true)}
                   >
                     {collapsed ? null : "خروج از حساب"}
@@ -333,7 +333,7 @@ function DashboardLayout({ howUser, user, children }) {
               ) : (
                 <Button
                   icon={<PiSignOutBold size={20} />}
-                  className="bg-navbarDashboard hover:bg-sidebarTheme mx-auto my-0 border-none rounded-[8px] w-[70%] text-sidebarTheme hover:text-navbarDashboard transition-colors duration-500 outline-none"
+                  className="bg-navbarDashboard hover:bg-sidebarTheme mx-auto my-0 border-none rounded-[8px] outline-none w-[70%] text-sidebarTheme hover:text-navbarDashboard transition-colors duration-500"
                   onClick={() => setIsModalOpen(true)}
                 >
                   {collapsed ? null : "خروج از حساب"}
@@ -346,7 +346,7 @@ function DashboardLayout({ howUser, user, children }) {
             <div className="flex justify-start items-center gap-2 py-[14px] w-full">
               <Button
                 onClick={toggleCollapsed}
-                className="bg-sidebarTheme hover:bg-navbarDashboard border-none text-navbarDashboard hover:text-sidebarTheme transition-colors duration-500 outline-none"
+                className="bg-sidebarTheme hover:bg-navbarDashboard border-none outline-none text-navbarDashboard hover:text-sidebarTheme transition-colors duration-500"
               >
                 {collapsed ? (
                   <PiArrowFatLineLeftBold size={20} />

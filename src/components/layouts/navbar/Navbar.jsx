@@ -220,7 +220,7 @@ function Navbar({ isLogin }) {
           <Menu
             mode="horizontal"
             items={items}
-            className="desktop:w-[75%] laptop:w-[75%] justify-center items-center bg-sidebarTheme shadow-none border-b-none w-[50%] mobile:w-[50%] tablet:w-[70%]"
+            className="justify-center items-center bg-sidebarTheme shadow-none border-b border-b-none w-[50%] desktop:w-[75%] laptop:w-[75%] mobile:w-[50%] tablet:w-[70%]"
           />
           <div>
             <img src="/image/logo.png" alt="Logo" />

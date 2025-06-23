@@ -4,7 +4,7 @@ import { PiHeartBold } from "react-icons/pi";
 
 function NoUser({}) {
   return (
-    <section className="flex flex-col justify-center items-center gap-3 pt-6 w-full">
+    <section className="flex flex-col justify-center items-center gap-3 py-6 w-full">
       <PiHeartBold size={150} color="#4b382a" />
       <p className="text-[48px] text-navbarDashboard">
         {" "}
