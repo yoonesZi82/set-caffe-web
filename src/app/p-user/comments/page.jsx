@@ -2,9 +2,14 @@ import React from "react";
 import CommentsTable from "./components/table/CommentsTable";
 import { checkToken } from "@/utils/checkToken";
 import DashboardLayout from "@/components/layouts/DashboardLayout";
+import { redirect } from "next/navigation";
 
 const Page = async () => {
   const user = await checkToken();
+
+  if (!user) {
+    redirect("/login-register");
+  }
 
   return (
     <DashboardLayout
@@ -18,9 +23,9 @@ const Page = async () => {
             : ""
         }
       >
-        {user.comment.length > 0 ? (
+        {user.comment && user.comment.length > 0 ? (
           <section className="overflow-x-auto">
-            <CommentsTable comments={user.comment} />
+            <CommentsTable comments={user.comment || []} />
           </section>
         ) : (
           <section>

@@ -1,9 +1,14 @@
 import { checkToken } from "@/utils/checkToken";
 import DashboardLayout from "@/components/layouts/DashboardLayout";
 import WishlistTable from "./components/table/WishlistTable";
+import { redirect } from "next/navigation";
 
 const Page = async () => {
   const user = await checkToken();
+
+  if (!user) {
+    redirect("/login-register");
+  }
 
   return (
     <DashboardLayout
@@ -17,9 +22,9 @@ const Page = async () => {
             : ""
         }
       >
-        {user.wishlist ? (
+        {user.wishlist && user.wishlist.length > 0 ? (
           <section className="overflow-x-auto">
-            <WishlistTable wishlists={user.wishlist} user={user} />
+            <WishlistTable wishlists={user.wishlist || []} user={user} />
           </section>
         ) : (
           <section>

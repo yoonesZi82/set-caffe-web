@@ -7,7 +7,7 @@ import showNotification from "@/utils/notification";
 
 export default function WishlistTable({ wishlists, user }) {
   const [loading, setLoading] = useState(null);
-  const [localWishlists, setLocalWishlists] = useState(wishlists);
+  const [localWishlists, setLocalWishlists] = useState(wishlists || []);
   const deleteWishlist = (productID) => {
     setLoading(productID);
     axios
@@ -132,7 +132,7 @@ export default function WishlistTable({ wishlists, user }) {
       pagination={{ pageSize: 5 }}
       expandable={{
         expandedRowRender: (record) => (
-          <p className="m-0 line-clamp-2 text-navbarDashboard">
+          <p className="m-0 text-navbarDashboard line-clamp-2">
             {record.description}
           </p>
         ),
