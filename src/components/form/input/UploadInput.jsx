@@ -144,7 +144,7 @@ const UploadInput = ({
               >
                 <div
                   className={
-                    "flex flex-col justify-center items-center gap-4 border-2 border-navbarDashboard hover:border-sidebarTheme bg-sidebarTheme hover:bg-navbarDashboard p-3 border-dashed rounded-[8px] w-full text-navbarDashboard hover:text-sidebarTheme transition-colors duration-500"
+                    "flex flex-col justify-center items-center gap-4 border-2 border-navbarDashboard hover:border-sidebarTheme bg-sidebarTheme hover:bg-navbarDashboard py-10 px-3 border-dashed rounded-[8px] w-full text-navbarDashboard hover:text-sidebarTheme transition-colors duration-500"
                   }
                 >
                   <div>
@@ -167,6 +167,7 @@ const UploadInput = ({
                 }}
                 src={previewImage}
                 loading={loading}
+                className="!rounded-lg object-cover"
               />
             )}
           </>

@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.9.0",
     "@prisma/client": "^5.22.0",
+    "@supabase/supabase-js": "^2.56.0",
     "antd": "^5.21.2",
     "aos": "^2.3.4",
     "axios": "^1.7.7",

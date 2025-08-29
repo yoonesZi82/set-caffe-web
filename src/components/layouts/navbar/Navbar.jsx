@@ -179,7 +179,11 @@ function Navbar({ isLogin }) {
                   icon: <PiUserBold />,
                 },
                 {
-                  label: <p onClick={showModal}>خروج از حساب کاربری</p>,
+                  label: (
+                    <Link href="#" onClick={showModal}>
+                      خروج از حساب کاربری
+                    </Link>
+                  ),
                   key: "sign-out",
                   icon: <PiSignOutBold />,
                 },

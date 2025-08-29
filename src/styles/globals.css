@@ -437,4 +437,8 @@ tbody > tr {
 .ant-upload {
   width: 100% !important;
 }
+.ant-upload-list-item-image {
+  border-radius: 8px !important;
+  object-fit: cover;
+}
 /* end style uploader */

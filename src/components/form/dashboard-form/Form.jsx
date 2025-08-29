@@ -7,10 +7,10 @@ function Form({ children, handleSubmit, error, loading }) {
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center gap-4 w-full h-full"
+        className="flex flex-col justify-between gap-4 w-full h-full"
       >
         {children}
-        <div className="desktop:w-1/2 laptop:w-1/2 flex flex-col justify-center items-center gap-4 w-full mobile:w-full tablet:w-full">
+        <div className="flex flex-col justify-center items-center gap-4 w-full">
           <ButtonForm
             title={"ارسال"}
             loading={loading}
@@ -18,7 +18,7 @@ function Form({ children, handleSubmit, error, loading }) {
           />
         </div>
         {error && (
-          <div className="desktop:w1/2 laptop:w-1/2 w-full mobile:w-full tablet:w-full">
+          <div className="w-full laptop:w-1/2 mobile:w-full tablet:w-full desktop:w1/2">
             <Alert
               message={error}
               type="error"

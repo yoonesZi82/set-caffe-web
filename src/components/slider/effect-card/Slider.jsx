@@ -30,12 +30,12 @@ export default function Slider({ productID, user }) {
       {loading && <Loader />}
       {error && (
         <div className="flex justify-center items-center w-full">
-          <p className="text-center text-navbarDashboard"> {error} </p>
+          <p className="text-navbarDashboard text-center"> {error} </p>
         </div>
       )}
       {!loading && !error && products.length === 0 && (
         <div className="flex justify-center items-center w-full">
-          <p className="text-center text-navbarDashboard">
+          <p className="text-navbarDashboard text-center">
             {" "}
             محصولی برای نمایش وجود ندارد{" "}
           </p>
@@ -46,7 +46,7 @@ export default function Slider({ productID, user }) {
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
-          className="w-[240px]"
+          className="w-[300px]"
         >
           {products.map((product) => (
             <SwiperSlide key={product.id} className="rounded-[8px]">

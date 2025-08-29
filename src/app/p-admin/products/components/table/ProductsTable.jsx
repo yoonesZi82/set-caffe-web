@@ -86,11 +86,15 @@ export default function ProductsTable({ products }) {
       title: "قیمت محصول",
       dataIndex: "price",
       key: "price",
+      render: (_, record) => <p> {record.price.toLocaleString()} تومان </p>,
     },
     {
       title: "توضیحات کوتاه",
       dataIndex: "shortDescription",
       key: "shortDescription",
+      render: (_, record) => (
+        <p className="line-clamp-2"> {record.shortDescription} </p>
+      ),
     },
     {
       title: "وزن محصول",

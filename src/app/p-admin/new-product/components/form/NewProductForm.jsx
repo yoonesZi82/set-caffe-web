@@ -83,7 +83,7 @@ function NewProductForm() {
       loading={loading}
       error={error}
     >
-      <div className="desktop:w-1/2 laptop:w-1/2 flex flex-col justify-start items-center gap-4 pt-[25px] pl-[10px] w-full mobile:w-full tablet:w-full h-full min-h-[500px] overflow-y-auto">
+      <div className="justify-start items-center gap-4 grid grid-cols-1 laptop:grid-cols-2 pt-[25px] pl-[10px] w-full h-full min-h-[500px] overflow-y-auto">
         <div className="flex flex-col gap-3 w-full">
           <NameInput
             control={control}
@@ -109,6 +109,14 @@ function NewProductForm() {
           />
         </div>
         <div className="flex flex-col gap-3 w-full">
+          <NameInput
+            control={control}
+            error={errors?.weight?.message}
+            name={"weight"}
+            placeholder={"وزن محصول"}
+          />
+        </div>
+        <div className="flex flex-col gap-3 col-span-1 laptop:col-span-2 w-full">
           <MessageInput
             control={control}
             error={errors?.longDescription?.message}
@@ -119,9 +127,17 @@ function NewProductForm() {
         <div className="flex flex-col gap-3 w-full">
           <NameInput
             control={control}
-            error={errors?.weight?.message}
-            name={"weight"}
-            placeholder={"وزن محصول"}
+            error={errors?.tags?.message}
+            name={"tags"}
+            placeholder={"برچسب‌ها را با (,) وارد کنید"}
+          />
+        </div>
+        <div className="flex flex-col gap-3 w-full">
+          <NameInput
+            control={control}
+            error={errors?.number?.message}
+            name={"number"}
+            placeholder={"تعداد محصول"}
           />
         </div>
         <div className="flex flex-col gap-3 w-full">
@@ -144,28 +160,13 @@ function NewProductForm() {
             onChange={(value) => setValue("smell", value)}
           />
         </div>
-        <div className="flex flex-col gap-3 w-full">
+
+        <div className="flex flex-col gap-3 col-span-1 laptop:col-span-2 w-full">
           <UploadInput
             control={control}
             error={errors?.image?.message}
             setValue={setValue}
             route={"product"}
-          />
-        </div>
-        <div className="flex flex-col gap-3 w-full">
-          <NameInput
-            control={control}
-            error={errors?.tags?.message}
-            name={"tags"}
-            placeholder={"برچسب‌ها را با (,) وارد کنید"}
-          />
-        </div>
-        <div className="flex flex-col gap-3 w-full">
-          <NameInput
-            control={control}
-            error={errors?.number?.message}
-            name={"number"}
-            placeholder={"تعداد محصول"}
           />
         </div>
       </div>

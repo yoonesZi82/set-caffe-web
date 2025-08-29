@@ -3,7 +3,7 @@ const db = new PrismaClient();
 
 export async function GET(req) {
   try {
-    const departments = await db.department.findMany({});
+    const departments = await db.department.findMany();
 
     if (!departments) {
       return Response.json(

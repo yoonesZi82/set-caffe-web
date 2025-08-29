@@ -261,10 +261,9 @@ function DashboardLayout({ howUser, user, children }) {
     <>
       <Layout className="w-screen h-screen">
         <Header className="flex items-center p-0">
-          <div className="flex justify-center items-center bg-navbarDashboard w-[66%] desktop:w-[15%] laptop:w-[23%] mobile:w-[66%] tablet:w-[38%] h-full">
-            <p className="text-white text-base">
-              {user ? user.name : "نام"} عزیز خوش اومدی
-            </p>
+          <div className="flex flex-col justify-center items-center gap-1 bg-navbarDashboard w-[66%] desktop:w-[15%] laptop:w-[23%] mobile:w-[66%] tablet:w-[38%] h-full">
+            <p className="text-white text-base">{user ? user.name : "نام"}</p>
+            <p className="text-white text-base">عزیز خوش اومدی</p>
           </div>
           <div className="flex justify-between items-center bg-navbarDashboard pl-8 w-full">
             <div className="flex gap-[12px]">

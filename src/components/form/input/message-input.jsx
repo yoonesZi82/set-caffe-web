@@ -11,7 +11,7 @@ const MessageInput = ({ control, error, name, placeholder }) => {
         control={control}
         render={({ field }) => (
           <TextArea
-            autoSize={{ minRows: 3, maxRows: 4 }}
+            autoSize={{ minRows: 6, maxRows: 8 }}
             placeholder={placeholder ? placeholder : "متن پیام*"}
             {...field}
           />

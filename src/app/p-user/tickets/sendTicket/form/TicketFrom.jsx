@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, Controller } from "react-hook-form";
 import TicketSchema from "./form-schema/schema";
@@ -55,7 +55,7 @@ function TicketForm({ user }) {
 
   return (
     <Form handleSubmit={handleSubmit(sendTicket)} loading={loading}>
-      <div className="desktop:w-1/2 laptop:w-1/2 flex flex-col justify-center items-center gap-4 w-full mobile:w-full tablet:w-full">
+      <div className="gap-4 grid grid-cols-1 laptop:grid-cols-2 w-full">
         <div className="flex flex-col gap-3 w-full">
           <NameInput
             control={control}
@@ -70,9 +70,9 @@ function TicketForm({ user }) {
             control={control}
             render={({ field }) => (
               <DepartmentSelect
-                {...field}
                 error={errors.departmentId?.message}
                 onChange={field.onChange}
+                {...field}
               />
             )}
           />
@@ -83,10 +83,10 @@ function TicketForm({ user }) {
             control={control}
             render={({ field }) => (
               <SubDepartmentSelect
-                {...field}
                 error={errors.subDepartmentId?.message}
                 departmentId={departmentId}
-                onChange={field.onChange} // اضافه کردن onChange
+                onChange={field.onChange}
+                {...field}
               />
             )}
           />
@@ -100,12 +100,13 @@ function TicketForm({ user }) {
                 {...field}
                 error={errors.piority?.message}
                 departmentId={departmentId}
-                onChange={field.onChange} // اضافه کردن onChange
+                placeholder="اولویت*"
+                onChange={field.onChange}
               />
             )}
           />
         </div>
-        <div className="flex flex-col gap-3 w-full">
+        <div className="flex flex-col gap-3 col-span-1 laptop:col-span-2 w-full">
           <MessageInput control={control} error={errors?.message?.message} />
         </div>
       </div>
